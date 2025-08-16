@@ -1,6 +1,6 @@
 # White Rose Terminal Clock
 
-A colorful, ASCII-art clock for your terminal, inspired by the enigmatic White Rose from Mr. Robot.
+A colorful, ASCII-art clock for your terminal, inspired by the enigmatic Whiterose's digital watch from Mr. Robot.
 
 ![White Rose Clock](images/clock0.png)
 ![White Rose Clock](images/clock1.png)
