@@ -16,8 +16,11 @@ Perfect for terminal aesthetics lovers, Mr. Robot fans, or anyone who enjoys a s
 Usage:
 ```bash
 git clone https://github.com/malinatech/whiterose.git
-whiterose
-./install.sh 
+cd whiterose
+./install.sh
+
+```
 
 ```bash
 whiterose -h
+```
