@@ -17,8 +17,7 @@ Usage:
 ```bash
 git clone https://github.com/malinatech/whiterose.git
 cd whiterose
-./install.sh
-
+./install.sh 
 ```
 
 ```bash

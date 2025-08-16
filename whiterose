@@ -1,0 +1,71 @@
+#!/bin/bash
+
+# Made by: Alina ❤︎ Github: @malinatech ❤︎ Website: malinatech.github.io ❤︎ Meeooow :3 
+
+echo -ne "\033]0;Whiterose\007"
+
+# Default values
+show_count=false
+sep="-@"
+gay_filter=""
+font="mono12"
+rose=0
+DIR="$(dirname "$0")"
+
+# Parsing arguments
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        -h)
+            printf "Whiterose - ASCII terminal clock inspired by Mr.Robot show\n\ncommands:\n\t-c (show counting)\n\t-g (rainbow colors)\n\t-f {font} (font for toilet)\n"
+            exit 0
+            ;;
+        -c)
+            show_count=true
+            shift
+            ;;
+        -g)
+            gay_filter="-F gay"
+            shift
+            ;;
+        -f)
+            font="$2"
+            shift 2
+            ;;
+        *)
+            sep="$1"
+            shift
+            ;;
+    esac
+done
+
+# disable input and cursor
+tput civis
+cleanup() {
+    tput cnorm
+    stty echo icanon
+    exit 0
+}
+trap cleanup SIGINT
+stty -echo -icanon
+
+#main stuff :3
+write() {
+	clear
+	date +"%H${sep}%M" | toilet $gay_filter -f "$font" -w 1000
+	if $show_count; then
+    		printf "\e[1m $rose min passed"
+	fi
+}; write
+
+#main loop
+while true; do
+    now=$(date +'%S')
+    if [ $now -eq 0 ]; then
+        rose=$((rose + 1))
+        write
+        play -t mp3 -q $DIR/audio.mp3
+        sleep 5
+    fi
+    sleep 1
+done
+
