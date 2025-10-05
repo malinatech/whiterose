@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "[!] installing required software (debian)"
-sudo apt-get install sox libsox-fmt-all -y
+sudo apt-get install sox libsox-fmt-all toilet -y
 echo "[!] done"
 chmod +x belaruza
 printf "[?] do you want to add a PATH? (use 'whiterose' to run it from terminal) y/n? : "
